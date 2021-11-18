@@ -5,17 +5,14 @@ function idCheck(){
     const idLength = idValue.length
     let reult = document.getElementById('id_input_result')
 
-    const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{5,20}$/;
+    const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{3,20}$/;
     if(idLength == 0){
-        console.log('필수항목입니다')
         reult.innerHTML = '필수항목입니다'
         reult.style.color = 'red';
     }else if(!idValue.match(exp)){
-        console.log('숫자 포함 5~20자 이내로 작성해 주세요')
-        reult.innerHTML = '5~20자 이내로 작성해 주세요'
+        reult.innerHTML = '숫자 포함 3~20자 이내로 작성해 주세요'
         reult.style.color = 'red';
     }else if(idValue.match(exp)) {
-        console.log('멋진 아이디네요!');
         reult.innerHTML = '멋진 아이디네요!';
         reult.style.color = 'green';
     }
@@ -46,7 +43,7 @@ if(password.match(exp2)){
     pass.innerHTML = '8~20자리로 입력해주세요.';
     pass.style.color = 'red';
 }else{
-    pass.innerHTML = '소문자, 특수기호 포함해주세요';
+    pass.innerHTML = '소문자, 특수기호, 숫자 포함해주세요';
     pass.style.color = 'red';
 }
 }
@@ -84,7 +81,7 @@ function nameCheck(){
 
 function phoneCheck(){
     // 자릿수가 3 - 4 - 4 인지
-    const exp = /^\d{3}-\d{4}-\d{4}$/;
+    const exp = /^\d{3}\d{4}\d{4}$/;
     const phone = document.getElementById('phone').value;
     const result = document.getElementById('phone-check-result');
 
