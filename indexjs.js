@@ -43,7 +43,7 @@ if(password.match(exp2)){
     pass.innerHTML = '8~20자리로 입력해주세요.';
     pass.style.color = 'red';
 }else{
-    pass.innerHTML = '소문자, 특수기호, 숫자 포함해주세요';
+    pass.innerHTML = '소문자, 특수기호(-_!*), 숫자 포함해주세요';
     pass.style.color = 'red';
 }
 }
@@ -80,8 +80,7 @@ function nameCheck(){
 }
 
 function phoneCheck(){
-    // 자릿수가 3 - 4 - 4 인지
-    const exp = /^\d{3}\d{4}\d{4}$/;
+    const exp = /^\d{3}-\d{4}-\d{4}$/;
     const phone = document.getElementById('phone').value;
     const result = document.getElementById('phone-check-result');
 
