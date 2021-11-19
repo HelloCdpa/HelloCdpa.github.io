@@ -10,10 +10,16 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
         <!-- Simple line icons-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <!-- 부트스트랩 -->
@@ -24,21 +30,51 @@
 
     </head>
     <body id="page-top">
+        <!-- 모달 -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">로그인</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="#" method="post" name="login">
+                    <div class="mb-3">
+                      <label for="id" class="col-form-label">아이디:</label>
+                      <input type="text" class="form-control" id="id">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="col-form-label">비밀번호:</label>
+                      <input type="text" class="form-control" id="password">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         <!-- 메뉴영역 -->
     <header class="fixed-top bg-light bg-gradient">
-        <!-- d-flex flex적용
-        py-3 : 패딩을 y축으로 위아래 3px씩 -->
+        
+            
         <div class="container d-flex align-items-center py-3">
             <ul class="nav flex-grow-1">  
                 <li class="nav-item">
                     <a href="#page-top" class="nav-link btn btn-outline-warning">About me</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#goal" class="nav-link btn btn-outline-warning">My goal</a>
+                </li>
+                <li class="nav-item">
                     <a href="#skills" class="nav-link btn btn-outline-warning">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <!-- 해당 페이지 내에서 특정 영역으로 이동할 때
-                    href 속성값에 id값을 주면 해당 영역으로 스크롤 이동 함 -->
+
                     <a href="#projects" class="nav-link btn btn-outline-warning">Projects</a>
                 </li>
                 <li class="nav-item">
@@ -47,7 +83,7 @@
             </ul>
             <div class="d-flex">
             <input type="text" class="form-control" placeholder="Search">
-            <button class="btn btn-link text-primary text-decoration-none flex-shrink-0" >Sign in</button>
+            <button type="button" class="btn btn-link text-primary text-decoration-none flex-shrink-0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">로그인</button>
             <!-- 클릭하면 이동하기 -->
             <button class="btn btn-outline-primary flex-shrink-0" onclick="location.href='./signup.html'">Sign up</button>
             </div>
@@ -59,13 +95,16 @@
                 <li class="sidebar-brand"><a href="#page-top">Welcome 혜린's Portfolio</a></li>
                 <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
                 <li class="sidebar-nav-item"><a href="#page-top">About me</a></li>
+                <li class="sidebar-nav-item"><a href="#goal">My goal</a></li>
                 <li class="sidebar-nav-item"><a href="#skills">My skills</a></li>
                 <li class="sidebar-nav-item"><a href="#projects">Projects</a></li>
                 <li class="sidebar-nav-item"><a href="#academy">Academy</a></li><br>
                 
                 <div class="d-grid gap-2 col-6 mx-auto">
            
-                   <button class="btn btn-outline-dark">로그인</button>
+                
+                   <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">로그인</button>
+
                    <button class="btn btn-dark" onclick="location.href='./signup.html'">Sign up</button>
                  </div>
             </ul>
@@ -81,15 +120,21 @@
             </div>
         </header>
         <!-- About-->
-        <section class="div1">
+        <section class="div1" id="goal" >
             <div class="container px-4 px-lg-5 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-10">
-                        <h1 class="mt-5">넘치는 창의력, 끊임 없는 도전 정신</h1>
-                        <h3 class="lead mb-5"> 
-                            " '어느정도 깊이 고뇌할 수 있는 가' 가 인간의 위치를 결정한다. " <br>
-                            
-                            새로운 문제에 도전을 마다하지 않고 끈기 있게 해결해 나가는 개발자가 되는 것이 저의 목표입니다. 
+                        <h1 class="mt-5 mb-5 textb">What is my goal?</h1>
+                        <h3 class="lead mb-5 textb"> 
+                            개발자에 대한 정보를 얻기위해 개발 관련 유튜브를 많이 봅니다. <br>
+                            그 중 제가 가장 닮고 싶은 개발자, <br>
+                            Interactive Developer 김종민님 같은 개발자가 되는 것이 제 목표입니다. <br> <br>
+                            커리어도 대단하시지만 개발자에 대한 자세를 닮고 싶습니다. <br>
+                            '개발자에 대한 자세를 쌓는 것'이 <br>
+                            결국 스펙을 쌓는 것이라고 생각합니다. <br> <br>
+                            1. 새로운 것에 대한 배움을 귀찮아 하지 않겠습니다.<br>
+                            2. 평소 아이디어가 떠오른 즉시 구상하고 작업하는 것에 시간을 아까워하지 않겠습니다.<br>
+                            3. 새롭고 다양한 프로그램을 이용해 보며 트렌드를 따라 갈 것입니다. <br>
                 
                         </h3>
                         <a class="btn btn-dark btn-xl" href="#services">My Skills</a>

@@ -11571,10 +11571,10 @@ footer.footer .social-link:hover {
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
 .div1 {
- height: 400px;
+ height: 500px;
   background-color: orange;
   /* 그림을 배경으로 넣기*/
-  background-image: url(../assets/img/do.png);
+  background-image: url(../assets/img/aa.jpeg);
   /* background-repeat: no-repeat; */
   /* x축 시작점을 기준으로 
   떨어진 위치 */
@@ -11588,6 +11588,18 @@ footer.footer .social-link:hover {
 
   /* 스크롤해도 그림이 고정 */
   /* background-attachment: fixed; */
+
+
+}
+
+.textb {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 100;
+
+
+
+
+
 
 
 }
